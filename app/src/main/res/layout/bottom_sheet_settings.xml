@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lcars_panel_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- ── HEADER ──────────────────────────────────── -->
+        <View android:layout_width="match_parent" android:layout_height="8dp"
+            android:background="@color/lcars_orange" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <View android:layout_width="4dp" android:layout_height="28dp"
+                android:background="@color/lcars_orange" android:layout_marginEnd="12dp" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="SYSTEM CONFIGURATION"
+                android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_orange"
+                android:textSize="18sp" android:letterSpacing="0.12"
+                android:textAllCaps="true" android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ── SECTION: AUDIO OUTPUT ──────────────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_orange" android:layout_marginTop="4dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="AUDIO OUTPUT" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_tan" android:textSize="11sp"
+            android:letterSpacing="0.15" android:textAllCaps="true"
+            android:paddingStart="16dp" android:paddingTop="10dp" android:paddingBottom="4dp" />
+
+        <!-- Output Volume -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="OUTPUT VOLUME" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_orange" android:textSize="13sp"
+            android:paddingStart="16dp" android:paddingBottom="2dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <SeekBar android:id="@+id/seekVolume" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:progressTint="@color/lcars_orange"
+                android:progressBackgroundTint="@color/lcars_gray"
+                android:thumbTint="@color/lcars_orange" />
+            <TextView android:id="@+id/tvVolumeValue" android:layout_width="52dp"
+                android:layout_height="wrap_content" android:textColor="@color/lcars_orange"
+                android:fontFamily="monospace" android:textSize="13sp"
+                android:gravity="end" android:text="80%" />
+        </LinearLayout>
+
+        <!-- Auto-Speak -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="AUTO-SPEAK TRANSLATION"
+            android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_orange"
+            android:textSize="13sp" android:paddingStart="16dp" android:paddingBottom="6dp"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <Button android:id="@+id/btnAutoSpeakOn"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="SPEAK ON"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_marginEnd="6dp" />
+            <Button android:id="@+id/btnAutoSpeakOff"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="SPEAK OFF"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
+
+        <!-- ── SECTION: MIC SOURCE ─────────────────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_peach" android:layout_marginTop="8dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="MICROPHONE SOURCE" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_tan" android:textSize="11sp"
+            android:letterSpacing="0.15" android:textAllCaps="true"
+            android:paddingStart="16dp" android:paddingTop="10dp" android:paddingBottom="6dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <Button android:id="@+id/btnMicPhone"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="PHONE MIC"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_marginEnd="6dp" />
+            <Button android:id="@+id/btnMicBluetooth"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="BT HEADSET"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvMicDescription"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:fontFamily="monospace" android:textColor="@color/lcars_gray"
+            android:textSize="10sp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingTop="4dp"
+            android:text="Phone Mic: Better accuracy · higher quality audio\nBT Headset: Wireless · 8kHz SCO audio (lower quality)" />
+
+        <!-- ── SECTION: VOICE SYNTHESIS ───────────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_blue" android:layout_marginTop="8dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="VOICE SYNTHESIS" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_tan" android:textSize="11sp"
+            android:letterSpacing="0.15" android:textAllCaps="true"
+            android:paddingStart="16dp" android:paddingTop="10dp" android:paddingBottom="4dp" />
+
+        <!-- TTS Speech Rate -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="SPEECH RATE" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_blue_light" android:textSize="13sp"
+            android:paddingStart="16dp" android:paddingBottom="2dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <SeekBar android:id="@+id/seekTtsRate" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:progressTint="@color/lcars_blue"
+                android:progressBackgroundTint="@color/lcars_gray"
+                android:thumbTint="@color/lcars_blue" />
+            <TextView android:id="@+id/tvTtsRateValue" android:layout_width="52dp"
+                android:layout_height="wrap_content" android:textColor="@color/lcars_blue_light"
+                android:fontFamily="monospace" android:textSize="13sp"
+                android:gravity="end" android:text="1.0×" />
+        </LinearLayout>
+
+        <!-- TTS Pitch -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="VOICE PITCH" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_blue_light" android:textSize="13sp"
+            android:paddingStart="16dp" android:paddingBottom="2dp" android:layout_marginTop="12dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <SeekBar android:id="@+id/seekTtsPitch" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:progressTint="@color/lcars_blue"
+                android:progressBackgroundTint="@color/lcars_gray"
+                android:thumbTint="@color/lcars_blue" />
+            <TextView android:id="@+id/tvTtsPitchValue" android:layout_width="52dp"
+                android:layout_height="wrap_content" android:textColor="@color/lcars_blue_light"
+                android:fontFamily="monospace" android:textSize="13sp"
+                android:gravity="end" android:text="1.00" />
+        </LinearLayout>
+
+        <!-- ── SECTION: SPEECH RECOGNITION ───────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_purple" android:layout_marginTop="8dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="SPEECH RECOGNITION" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_tan" android:textSize="11sp"
+            android:letterSpacing="0.15" android:textAllCaps="true"
+            android:paddingStart="16dp" android:paddingTop="10dp" android:paddingBottom="6dp" />
+
+        <!-- Recognition Quality -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="RECOGNITION QUALITY"
+            android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_purple_light"
+            android:textSize="13sp" android:paddingStart="16dp" android:paddingBottom="6dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <Button android:id="@+id/btnQualityEnhanced"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="ENHANCED"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_marginEnd="6dp" />
+            <Button android:id="@+id/btnQualityOffline"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="OFFLINE"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvQualityDescription"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:fontFamily="monospace" android:textColor="@color/lcars_gray"
+            android:textSize="10sp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingTop="4dp"
+            android:text="Enhanced: Google servers · best accuracy · needs internet\nOffline: On-device only · works anywhere · lower accuracy" />
+
+        <!-- Recognition Model -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="LANGUAGE MODEL"
+            android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_purple_light"
+            android:textSize="13sp" android:paddingStart="16dp" android:paddingBottom="6dp"
+            android:layout_marginTop="12dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <Button android:id="@+id/btnModelFreeForm"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="FREE FORM"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_marginEnd="6dp" />
+            <Button android:id="@+id/btnModelWebSearch"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:text="WEB SEARCH"
+                android:fontFamily="sans-serif-condensed" android:textSize="11sp"
+                android:textColor="@color/lcars_black"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:fontFamily="monospace" android:textColor="@color/lcars_gray"
+            android:textSize="10sp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingTop="4dp"
+            android:text="Free Form: Best for natural conversation\nWeb Search: Best for short phrases" />
+
+        <!-- Silence Timeout -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="SILENCE TIMEOUT"
+            android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_purple_light"
+            android:textSize="13sp" android:paddingStart="16dp" android:paddingBottom="2dp"
+            android:layout_marginTop="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Lower = faster response · may cut speech mid-sentence"
+            android:fontFamily="monospace" android:textColor="@color/lcars_gray"
+            android:textSize="10sp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingBottom="4dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <SeekBar android:id="@+id/seekSilenceTimeout" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:progressTint="@color/lcars_purple"
+                android:progressBackgroundTint="@color/lcars_gray"
+                android:thumbTint="@color/lcars_purple" />
+            <TextView android:id="@+id/tvSilenceTimeoutValue" android:layout_width="64dp"
+                android:layout_height="wrap_content" android:textColor="@color/lcars_purple_light"
+                android:fontFamily="monospace" android:textSize="12sp"
+                android:gravity="end" android:text="1500ms" />
+        </LinearLayout>
+
+        <!-- ── ENGAGE ───────────────────────────────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_orange" android:layout_marginTop="20dp" />
+
+        <Button android:id="@+id/btnEngageSettings"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="ENGAGE" android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" android:textSize="20sp" android:letterSpacing="0.2"
+            android:textAllCaps="true" android:textColor="@color/lcars_black"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/lcars_orange"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+</ScrollView>
+

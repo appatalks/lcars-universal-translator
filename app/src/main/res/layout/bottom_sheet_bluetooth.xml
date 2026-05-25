@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/lcars_panel_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BLUETOOTH DEVICES"
+        android:textColor="@color/lcars_blue"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="16sp"
+        android:letterSpacing="0.12"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lcars_blue"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAIRED DEVICES"
+        android:textColor="@color/lcars_gray"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="11sp"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true"
+        android:paddingBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBluetoothDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="300dp"
+        android:nestedScrollingEnabled="true" />
+
+</LinearLayout>
+

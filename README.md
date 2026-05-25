@@ -1,24 +1,35 @@
-# startrek-universal-translator
-I want to create a Star Trek style Universal Translator - Real time translation project
+<p align="center">
+  <img src="images/lcars-ut-splash.png" alt="LCARS Universal Translator" width="600">
+</p>
 
+# LCARS Universal Translator
 
-### Notes
+An Android app that performs real-time bidirectional speech translation with a Star Trek LCARS-themed interface.
 
-- AWS [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/sync.html)
-- Azure [Speech Translation](https://azure.microsoft.com/en-us/products/ai-services/speech-translation)
-- OpenAI [Translations](https://platform.openai.com/docs/guides/speech-to-text/translations)
-- Meta [Seamless Communication](https://ai.meta.com/research/seamless-communication/)
-- GCP [Translate](https://cloud.google.com/translate)
+<p align="center">
+  <img src="images/screenshot.png" alt="Screenshot" width="300">
+</p>
 
+## Features
 
-### Proof-of-Concept Works
+- Push-to-talk speech recognition and translation in both directions
+- On-device translation via Google ML Kit (offline, ~30 MB per language pair)
+- Optional Google Cloud Translation API for higher quality results
+- Bluetooth headset support (SCO audio routing) with phone mic fallback
+- Text-to-speech playback of translated output
+- Configurable speech recognition model, silence timeout, TTS rate/pitch
+- Foreground service to keep the translator alive while the screen is off
+- Stardate display
 
-- [aws-samples/amazon-live-translation-polly-transcribe](https://github.com/aws-samples/amazon-live-translation-polly-transcribe)
-- [moonsushistudio/chatemup](https://github.com/moonsushistudio/chatemup)
-- [ufal/whisper_streaming](https://github.com/ufal/whisper_streaming)
-- [Dadangdut33/Speech-Translate](https://github.com/Dadangdut33/Speech-Translate)
+## Requirements
 
+- Android 7.0+ (API 24)
+- Microphone
 
-### GPU Localhost Paths
+## Tech
 
-- [NVIDIA/DeepLearningExamples](https://github.com/NVIDIA/DeepLearningExamples)
+- Kotlin, Android SDK 36
+- Google ML Kit (language identification, on-device translate)
+- Android SpeechRecognizer
+- Android TextToSpeech
+- Bluetooth SCO audio

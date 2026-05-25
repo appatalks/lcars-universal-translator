@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LCARS Core Palette -->
+    <color name="lcars_black">#000000</color>
+    <color name="lcars_orange">#FF7700</color>
+    <color name="lcars_peach">#FF9966</color>
+    <color name="lcars_tan">#FFCC99</color>
+    <color name="lcars_blue">#9999FF</color>
+    <color name="lcars_blue_light">#AAAAFF</color>
+    <color name="lcars_purple">#CC44CC</color>
+    <color name="lcars_purple_light">#DD88CC</color>
+    <color name="lcars_red">#FF3300</color>
+    <color name="lcars_yellow">#FFFF33</color>
+    <color name="lcars_green">#33FF33</color>
+    <color name="lcars_white">#FFFFFF</color>
+    <color name="lcars_gray">#999999</color>
+
+    <!-- Status colors -->
+    <color name="lcars_bt_connected">#33FF33</color>
+    <color name="lcars_bt_disconnected">#FF3300</color>
+    <color name="lcars_listening">#FFFF33</color>
+    <color name="lcars_speaking">#9999FF</color>
+    <color name="lcars_idle">#FF7700</color>
+    <color name="lcars_dot_idle">#888888</color>
+    <color name="lcars_dot_unavailable">#888888</color>
+    <color name="lcars_toggle_inactive">#333333</color>
+
+    <!-- Display backgrounds -->
+    <color name="lcars_display_bg">#0A0A0A</color>
+    <color name="lcars_panel_bg">#111111</color>
+</resources>

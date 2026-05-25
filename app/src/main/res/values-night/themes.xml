@@ -1,0 +1,17 @@
+<resources>
+    <!-- LCARS is always "night" — same dark theme -->
+    <style name="Theme.LcarsTranslator" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/lcars_orange</item>
+        <item name="colorPrimaryVariant">@color/lcars_peach</item>
+        <item name="colorOnPrimary">@color/lcars_black</item>
+        <item name="colorSecondary">@color/lcars_blue</item>
+        <item name="colorSecondaryVariant">@color/lcars_purple</item>
+        <item name="colorOnSecondary">@color/lcars_black</item>
+        <item name="android:windowBackground">@color/lcars_black</item>
+        <item name="android:statusBarColor">@color/lcars_black</item>
+        <item name="android:navigationBarColor">@color/lcars_black</item>
+        <item name="android:textColorPrimary">@color/lcars_orange</item>
+        <item name="android:textColorSecondary">@color/lcars_tan</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+</resources>

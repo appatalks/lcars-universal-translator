@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">LCARS Translator</string>
+    <string name="universal_translator">Universal Translator</string>
+    <string name="stardate">Stardate</string>
+    <string name="btn_connect_bt">Connect BT</string>
+    <string name="btn_bt_connected">BT Connected</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_source_lang">My Language</string>
+    <string name="btn_target_lang">Their Language</string>
+    <string name="label_host_to_listen">Host to Listen</string>
+    <string name="label_speak_to_translate">Speak to Translate</string>
+    <string name="hint_host_to_listen">Hold &amp; let the host speak…</string>
+    <string name="hint_speak_to_translate">Hold &amp; speak to translate…</string>
+    <string name="label_detected_speech">Detected Speech</string>
+    <string name="label_translation">Translation</string>
+    <string name="label_status">System Status</string>
+    <string name="label_bt_device">Bluetooth Device</string>
+    <string name="status_idle">Ready — Hold a box to begin</string>
+    <string name="status_listening">Listening…</string>
+    <string name="status_translating">Translating…</string>
+    <string name="status_speaking">Speaking…</string>
+    <string name="status_no_speech">No speech detected</string>
+    <string name="status_downloading">Downloading Translation Model…</string>
+    <string name="status_bt_connecting">Connecting Bluetooth…</string>
+    <string name="status_bt_connected">Bluetooth SCO Active</string>
+    <string name="status_bt_disconnected">No Bluetooth Device</string>
+    <string name="status_no_bt">Bluetooth unavailable</string>
+    <string name="msg_permission_audio">Microphone permission is required to listen and translate speech.</string>
+    <string name="msg_permission_bt">Bluetooth permission is required to connect your headset.</string>
+    <string name="msg_no_speech_engine">No speech recognition engine found. Please install Google app.</string>
+    <string name="auto_detect">Auto-Detect</string>
+    <string name="select_source">Select Source Language</string>
+    <string name="select_target">Select Target Language</string>
+    <string name="btn_bt_label">BT</string>
+    <string name="btn_bt_active">BT ✓</string>
+    <string name="stardate_format">SD %d</string>
+</resources>
+
+

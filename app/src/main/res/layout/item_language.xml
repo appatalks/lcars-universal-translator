@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="?attr/selectableItemBackground">
+
+    <View
+        android:id="@+id/viewLangColor"
+        android:layout_width="6dp"
+        android:layout_height="32dp"
+        android:background="@color/lcars_orange"
+        android:layout_marginEnd="12dp" />
+
+    <TextView
+        android:id="@+id/tvLangName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/lcars_orange"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="15sp"
+        android:letterSpacing="0.05"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/tvLangCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/lcars_gray"
+        android:fontFamily="monospace"
+        android:textSize="11sp" />
+
+</LinearLayout>
+

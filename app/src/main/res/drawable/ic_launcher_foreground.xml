@@ -1,0 +1,86 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- LCARS left elbow — rounded top-left corner (orange) -->
+    <path
+        android:fillColor="#FF7700"
+        android:pathData="M20,24 Q20,24 20,48 L20,48 L36,48 L36,40 Q36,24 44,24 L44,24 Z" />
+
+    <!-- LCARS top horizontal bar (orange) -->
+    <path
+        android:fillColor="#FF7700"
+        android:pathData="M44,24 L88,24 L88,36 L44,36 Z" />
+
+    <!-- LCARS left vertical bar (peach/tan) -->
+    <path
+        android:fillColor="#FF9966"
+        android:pathData="M20,50 L36,50 L36,84 L20,84 Z" />
+
+    <!-- LCARS second horizontal bar (blue) -->
+    <path
+        android:fillColor="#9999FF"
+        android:pathData="M44,40 L88,40 L88,48 L44,48 Z" />
+
+    <!-- LCARS small accent bar (purple) -->
+    <path
+        android:fillColor="#CC44CC"
+        android:pathData="M20,86 L36,86 L36,92 L20,92 Z" />
+
+    <!-- ═══ Scattered language characters in the content area ═══ -->
+
+    <!-- Row 1 — orange characters -->
+    <!-- Korean ㅎ shape -->
+    <path android:fillColor="#FF7700"
+        android:pathData="M44,55 L50,55 L50,57 L48,57 L48,59 L46,59 L46,57 L44,57Z" />
+    <!-- Japanese の shape -->
+    <path android:fillColor="#FF9966"
+        android:pathData="M54,57 Q54,54 56.5,54 Q59,54 59,57 Q59,60 56.5,60 Q54,60 54,57Z M56,57 Q56,56 56.5,56 Q57,56 57,57 Q57,58 56.5,58 Q56,58 56,57Z" />
+    <!-- Cyrillic Д shape -->
+    <path android:fillColor="#9999FF"
+        android:pathData="M63,60 L63,55 L65,54 L67,55 L67,60 L69,60 L69,62 L61,62 L61,60Z" />
+    <!-- Arabic-like curve -->
+    <path android:fillColor="#CC44CC"
+        android:pathData="M73,55 Q76,54 78,56 Q79,58 77,59 L74,59 L73,57Z" />
+    <!-- Dot below -->
+    <path android:fillColor="#CC44CC"
+        android:pathData="M75,60 L76,60 L76,61 L75,61Z" />
+
+    <!-- Row 2 — mixed characters -->
+    <!-- Chinese 大 shape -->
+    <path android:fillColor="#FF7700"
+        android:pathData="M44,67 L48,67 L48,65 L50,65 L50,67 L54,67 L54,69 L50,69 L50,72 L48,72 L48,69 L44,69Z" />
+    <!-- Greek Ω shape -->
+    <path android:fillColor="#9999FF"
+        android:pathData="M58,67 Q58,64 61,64 Q64,64 64,67 Q64,69 62,70 L64,70 L64,72 L58,72 L58,70 L60,70 Q58,69 58,67Z M60,67 Q60,66 61,66 Q62,66 62,67 Q62,68 61,68 Q60,68 60,67Z" />
+    <!-- Hebrew-like ש shape -->
+    <path android:fillColor="#FF9966"
+        android:pathData="M68,72 L68,66 L70,66 L70,68 L72,66 L74,66 L74,72 L72,72 L72,68 L70,70 L70,72Z" />
+    <!-- Thai-like ก shape -->
+    <path android:fillColor="#CC44CC"
+        android:pathData="M78,66 L84,66 L84,72 L82,72 L82,68 L80,68 L80,72 L78,72Z" />
+
+    <!-- Row 3 — more characters -->
+    <!-- Korean ㅁ shape -->
+    <path android:fillColor="#FF9966"
+        android:pathData="M44,76 L50,76 L50,82 L44,82Z M46,78 L46,80 L48,80 L48,78Z" />
+    <!-- Devanagari-like अ shape -->
+    <path android:fillColor="#FF7700"
+        android:pathData="M54,76 L60,76 L60,78 L58,78 L58,82 L56,82 L56,78 L54,78Z M55,79 Q55,81 57,82" android:strokeWidth="1" android:strokeColor="#FF7700" />
+    <!-- Cyrillic Ж shape -->
+    <path android:fillColor="#9999FF"
+        android:pathData="M64,76 L66,78 L68,76 L70,76 L68,79 L70,82 L68,82 L66,80 L64,82 L62,82 L64,79 L62,76Z" />
+    <!-- Georgian-like ბ shape -->
+    <path android:fillColor="#CC44CC"
+        android:pathData="M74,82 L74,76 L80,76 L80,78 L76,78 L76,80 L80,80 L80,82Z" />
+
+    <!-- Small accent dots / diacritics scattered -->
+    <path android:fillColor="#FF7700" android:pathData="M85,56 L86.5,56 L86.5,57.5 L85,57.5Z" />
+    <path android:fillColor="#9999FF" android:pathData="M85,66 L86.5,66 L86.5,67.5 L85,67.5Z" />
+    <path android:fillColor="#FF9966" android:pathData="M85,76 L86.5,76 L86.5,77.5 L85,77.5Z" />
+    <path android:fillColor="#CC44CC" android:pathData="M85,70 L86.5,70 L86.5,71.5 L85,71.5Z" />
+    <path android:fillColor="#FF7700" android:pathData="M85,80 L86.5,80 L86.5,81.5 L85,81.5Z" />
+
+</vector>

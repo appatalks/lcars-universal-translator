@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lcars_black"
+    android:fitsSystemWindows="true">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  LCARS HEADER ASSEMBLY                              -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Left elbow "bumper" block -->
+    <View
+        android:id="@+id/lcarsElbow"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/lcars_elbow_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Thin black gap below elbow -->
+    <View
+        android:id="@+id/lcarsElbowGap"
+        android:layout_width="72dp"
+        android:layout_height="6dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/lcarsElbow"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Left sidebar coloured bar below elbow gap -->
+    <View
+        android:id="@+id/lcarsSidebarTop"
+        android:layout_width="72dp"
+        android:layout_height="28dp"
+        android:background="@color/lcars_peach"
+        app:layout_constraintTop_toBottomOf="@id/lcarsElbowGap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Header top bar (orange strip spanning right of elbow) -->
+    <View
+        android:id="@+id/lcarsHeaderBar"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/lcars_orange"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="6dp" />
+
+    <!-- Title text on the header bar -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/universal_translator"
+        android:textAppearance="@style/TextAppearance.Lcars.Title"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        app:layout_constraintTop_toTopOf="@id/lcarsHeaderBar"
+        app:layout_constraintBottom_toBottomOf="@id/lcarsHeaderBar"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toStartOf="@id/tvStardate"
+        android:layout_marginStart="18dp" />
+
+    <!-- Stardate display on the right of header -->
+    <TextView
+        android:id="@+id/tvStardate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SD 47634.44"
+        android:textAppearance="@style/TextAppearance.Lcars.Title"
+        android:gravity="center_vertical"
+        android:paddingEnd="12dp"
+        app:layout_constraintTop_toTopOf="@id/lcarsHeaderBar"
+        app:layout_constraintBottom_toBottomOf="@id/lcarsHeaderBar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Header second bar (narrower, blue/purple accent) -->
+    <View
+        android:id="@+id/lcarsHeaderBar2"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@color/lcars_blue"
+        app:layout_constraintTop_toBottomOf="@id/lcarsHeaderBar"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="6dp" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  LEFT SIDEBAR — Control Buttons                     -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- BT Connect button -->
+    <Button
+        android:id="@+id/btnBluetooth"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:text="BT"
+        style="@style/Widget.Lcars.Button"
+        android:backgroundTint="@color/lcars_blue"
+        android:textSize="11sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        app:layout_constraintTop_toBottomOf="@id/lcarsSidebarTop"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Spacer block 1 -->
+    <View
+        android:id="@+id/sidebarSpacer1"
+        android:layout_width="72dp"
+        android:layout_height="12dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/btnBluetooth"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative coloured panel 1 -->
+    <View
+        android:id="@+id/sidebarPanel1"
+        android:layout_width="72dp"
+        android:layout_height="40dp"
+        android:background="@color/lcars_purple"
+        app:layout_constraintTop_toBottomOf="@id/sidebarSpacer1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative coloured panel 2 -->
+    <View
+        android:id="@+id/sidebarPanel2"
+        android:layout_width="72dp"
+        android:layout_height="16dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative coloured panel 3 -->
+    <View
+        android:id="@+id/sidebarPanel3"
+        android:layout_width="72dp"
+        android:layout_height="56dp"
+        android:background="@color/lcars_peach"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Gap -->
+    <View
+        android:id="@+id/sidebarSpacer2"
+        android:layout_width="72dp"
+        android:layout_height="12dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative coloured panel 4 -->
+    <View
+        android:id="@+id/sidebarPanel4"
+        android:layout_width="72dp"
+        android:layout_height="56dp"
+        android:background="@color/lcars_orange"
+        app:layout_constraintTop_toBottomOf="@id/sidebarSpacer2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Gap -->
+    <View
+        android:id="@+id/sidebarSpacer3"
+        android:layout_width="72dp"
+        android:layout_height="12dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative panel (was START) -->
+    <View
+        android:id="@+id/sidebarPanel5"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
+        android:background="@color/lcars_green"
+        app:layout_constraintTop_toBottomOf="@id/sidebarSpacer3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Gap -->
+    <View
+        android:id="@+id/sidebarSpacer4"
+        android:layout_width="72dp"
+        android:layout_height="8dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Decorative panel (was STOP) -->
+    <View
+        android:id="@+id/sidebarPanel6"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
+        android:background="@color/lcars_blue"
+        app:layout_constraintTop_toBottomOf="@id/sidebarSpacer4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Gap -->
+    <View
+        android:id="@+id/sidebarSpacer5"
+        android:layout_width="72dp"
+        android:layout_height="8dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintTop_toBottomOf="@id/sidebarPanel6"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- CONFIG / Settings button -->
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
+        android:text="CONFIG"
+        style="@style/Widget.Lcars.Button"
+        android:backgroundTint="@color/lcars_purple"
+        android:textSize="10sp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        app:layout_constraintTop_toBottomOf="@id/sidebarSpacer5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  MAIN CONTENT AREA                                  -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Language bar -->
+    <LinearLayout
+        android:id="@+id/layoutLanguageBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/lcarsHeaderBar2"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnSourceLang"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="@string/btn_source_lang"
+            style="@style/Widget.Lcars.Button"
+            android:backgroundTint="@color/lcars_tan"
+            android:textSize="10sp"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▶"
+            android:textColor="@color/lcars_orange"
+            android:textSize="14sp"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnTargetLang"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="@string/btn_target_lang"
+            style="@style/Widget.Lcars.Button"
+            android:backgroundTint="@color/lcars_blue"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <!-- Status bar row -->
+    <LinearLayout
+        android:id="@+id/layoutStatusRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutLanguageBar"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- BT status dot -->
+        <View
+            android:id="@+id/viewBtDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/lcars_status_dot"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:id="@+id/tvBtStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/status_bt_disconnected"
+            android:textAppearance="@style/TextAppearance.Lcars.Label"
+            android:textColor="@color/lcars_gray" />
+
+        <!-- Listening status dot -->
+        <View
+            android:id="@+id/viewListenDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/lcars_status_dot"
+            android:backgroundTint="@color/lcars_gray"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="12dp" />
+
+        <TextView
+            android:id="@+id/tvSystemStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/status_idle"
+            android:textAppearance="@style/TextAppearance.Lcars.Label"
+            android:textColor="@color/lcars_orange" />
+
+    </LinearLayout>
+
+    <!-- Divider line -->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/lcars_orange"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutStatusRow"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- SPEAK TO TRANSLATE section label (top — your language) -->
+    <TextView
+        android:id="@+id/labelDetectedSpeech"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_speak_to_translate"
+        android:textAppearance="@style/TextAppearance.Lcars.Label"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top display box — your language (hold to speak, partials here) -->
+    <TextView
+        android:id="@+id/tvDetectedSpeech"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/lcars_display_bg"
+        android:padding="12dp"
+        android:textAppearance="@style/TextAppearance.Lcars.Display"
+        android:textColor="@color/lcars_orange"
+        android:gravity="top|start"
+        android:scrollbars="vertical"
+        android:hint="@string/hint_speak_to_translate"
+        android:textColorHint="@color/lcars_gray"
+        android:hapticFeedbackEnabled="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/labelDetectedSpeech"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/labelTranslation"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- HOST TO LISTEN section label (bottom — their language) -->
+    <TextView
+        android:id="@+id/labelTranslation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_host_to_listen"
+        android:textAppearance="@style/TextAppearance.Lcars.Label"
+        android:textColor="@color/lcars_blue_light"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDetectedSpeech"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvTranslation" />
+
+    <!-- Bottom display box — their language (hold to listen, translation here) -->
+    <TextView
+        android:id="@+id/tvTranslation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/lcars_display_blue_bg"
+        android:padding="12dp"
+        android:textAppearance="@style/TextAppearance.Lcars.Display"
+        android:textColor="@color/lcars_blue_light"
+        android:gravity="top|start"
+        android:scrollbars="vertical"
+        android:hint="@string/hint_host_to_listen"
+        android:textColorHint="@color/lcars_gray"
+        android:hapticFeedbackEnabled="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/labelTranslation"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/progressModelDownload"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- Model download progress bar -->
+    <ProgressBar
+        android:id="@+id/progressModelDownload"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:indeterminate="true"
+        android:progressTint="@color/lcars_blue"
+        android:indeterminateTint="@color/lcars_blue"
+        android:visibility="gone"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/lcarsBottomBarLeft"
+        app:layout_constraintStart_toEndOf="@id/lcarsElbow"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  LCARS BOTTOM BAR                                   -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <View
+        android:id="@+id/lcarsBottomBarLeft"
+        android:layout_width="72dp"
+        android:layout_height="40dp"
+        android:background="@color/lcars_orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <View
+        android:id="@+id/lcarsBottomBarGap"
+        android:layout_width="6dp"
+        android:layout_height="40dp"
+        android:background="@color/lcars_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lcarsBottomBarLeft"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvBottomStatus"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@color/lcars_peach"
+        android:text="LCARS — UNIVERSAL TRANSLATOR v1.0"
+        android:textAppearance="@style/TextAppearance.Lcars.Label"
+        android:textColor="@color/lcars_black"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lcarsBottomBarGap"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Bluetooth device name chip -->
+    <TextView
+        android:id="@+id/tvBtDeviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.Lcars.Label"
+        android:textColor="@color/lcars_black"
+        android:background="@drawable/lcars_btn_blue"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/lcarsBottomBarLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
