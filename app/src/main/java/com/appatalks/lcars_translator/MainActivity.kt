@@ -307,8 +307,6 @@ class MainActivity : AppCompatActivity() {
                 text        = text,
                 sourceLang  = translateFrom,
                 targetLang  = translateTo,
-                engine      = appSettings.translationEngine,
-                cloudApiKey = appSettings.cloudApiKey,
                 onModelDownloading = {
                     runOnUiThread {
                         progressModelDownload.visibility = View.VISIBLE

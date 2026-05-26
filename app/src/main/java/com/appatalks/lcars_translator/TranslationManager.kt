@@ -8,14 +8,8 @@ import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.Translator
 import com.google.mlkit.nl.translate.TranslatorOptions
 import com.google.mlkit.common.model.DownloadConditions
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlinx.coroutines.withContext
-import org.json.JSONObject
-import java.net.HttpURLConnection
-import java.net.URL
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 private const val TAG = "LcarsTranslation"
 private const val UNDETERMINED = "und"
@@ -55,9 +49,7 @@ class TranslationManager {
      *
      * @param sourceLang BCP-47 tag, e.g. "ko". Pass "und" to auto-detect first.
      * @param targetLang BCP-47 tag, e.g. "en".
-     * @param engine     AppSettings.ENGINE_ON_DEVICE or ENGINE_CLOUD.
-     * @param cloudApiKey Google Cloud Translation API key (required for ENGINE_CLOUD).
-     * @param onModelDownloading Called when a model needs to be downloaded (on-device only).
+     * @param onModelDownloading Called when a model needs to be downloaded.
      * @param onModelReady Called when the model is ready.
      * @return Translated text, or the original text on error.
      */
@@ -65,19 +57,11 @@ class TranslationManager {
         text: String,
         sourceLang: String,
         targetLang: String,
-        engine: String = AppSettings.ENGINE_ON_DEVICE,
-        cloudApiKey: String = "",
         onModelDownloading: (() -> Unit)? = null,
         onModelReady: (() -> Unit)? = null
     ): String {
         if (text.isBlank()) return text
 
-        // Route to cloud API if requested and key is present
-        if (engine == AppSettings.ENGINE_CLOUD && cloudApiKey.isNotBlank()) {
-            val resolvedSource = if (sourceLang == UNDETERMINED || sourceLang.isBlank())
-                detectLanguage(text) else sourceLang
-            return translateWithCloudApi(text, resolvedSource, targetLang, cloudApiKey)
-        }
 
         // ── On-device (ML Kit) path ────────────────────────────────────────
         // Resolve source language — detect if needed
@@ -143,54 +127,6 @@ class TranslationManager {
 
     // ── Internals ─────────────────────────────────────────────────────────
 
-    /**
-     * Calls Google Cloud Translation API v2.
-     * Docs: https://cloud.google.com/translate/docs/reference/rest/v2/translate
-     */
-    private suspend fun translateWithCloudApi(
-        text: String,
-        sourceLang: String,
-        targetLang: String,
-        apiKey: String
-    ): String = withContext(Dispatchers.IO) {
-        try {
-            val url = URL("https://translation.googleapis.com/language/translate/v2?key=$apiKey")
-            val connection = url.openConnection() as HttpURLConnection
-            connection.apply {
-                requestMethod = "POST"
-                setRequestProperty("Content-Type", "application/json; charset=utf-8")
-                doOutput = true
-                connectTimeout = 10_000
-                readTimeout    = 10_000
-            }
-
-            val body = JSONObject().apply {
-                put("q", text)
-                put("target", targetLang)
-                if (sourceLang != UNDETERMINED && sourceLang.isNotBlank()) put("source", sourceLang)
-                put("format", "text")
-            }.toString()
-
-            connection.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
-
-            if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-                val response = connection.inputStream.bufferedReader().readText()
-                JSONObject(response)
-                    .getJSONObject("data")
-                    .getJSONArray("translations")
-                    .getJSONObject(0)
-                    .getString("translatedText")
-                    .also { Log.d(TAG, "Cloud translated: $it") }
-            } else {
-                val err = connection.errorStream?.bufferedReader()?.readText() ?: "HTTP ${connection.responseCode}"
-                Log.e(TAG, "Cloud API error: $err")
-                text
-            }
-        } catch (e: Exception) {
-            Log.e(TAG, "Cloud API exception: ${e.message}")
-            text
-        }
-    }
 
     private fun getOrCreateTranslator(source: String, target: String): Translator {
         val key = "$source|$target"
