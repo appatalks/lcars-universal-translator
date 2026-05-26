@@ -19,7 +19,6 @@ class AppSettings(context: Context) {
 
         // Translation engine constants
         const val ENGINE_ON_DEVICE = "ON_DEVICE"   // Google ML Kit — offline, ~30 MB/pair
-        const val ENGINE_CLOUD     = "CLOUD"        // Google Cloud Translate API — online, higher quality
     }
 
     /** TTS / speaker output volume 0–100 (percent of STREAM_VOICE_CALL max). */
@@ -55,15 +54,6 @@ class AppSettings(context: Context) {
         get() = prefs.getInt("silence_timeout_ms", 1500)
         set(v) { prefs.edit().putInt("silence_timeout_ms", v).apply() }
 
-    /** Translation engine — ON_DEVICE (ML Kit) or CLOUD (Google Cloud Translate). */
-    var translationEngine: String
-        get() = prefs.getString("translation_engine", ENGINE_ON_DEVICE) ?: ENGINE_ON_DEVICE
-        set(v) { prefs.edit().putString("translation_engine", v).apply() }
-
-    /** Google Cloud Translation API v2 key (only used when engine = CLOUD). */
-    var cloudApiKey: String
-        get() = prefs.getString("cloud_api_key", "") ?: ""
-        set(v) { prefs.edit().putString("cloud_api_key", v).apply() }
 
     /**
      * When true: use the phone's built-in mic (higher audio quality, better recognition accuracy).

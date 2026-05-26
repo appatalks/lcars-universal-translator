@@ -14,7 +14,6 @@ An Android app that performs real-time bidirectional speech translation with a S
 
 - Push-to-talk speech recognition and translation in both directions
 - On-device translation via Google ML Kit (offline, ~30 MB per language pair)
-- Optional Google Cloud Translation API for higher quality results
 - Bluetooth headset support (SCO audio routing) with phone mic fallback
 - Text-to-speech playback of translated output
 - Configurable speech recognition model, silence timeout, TTS rate/pitch
