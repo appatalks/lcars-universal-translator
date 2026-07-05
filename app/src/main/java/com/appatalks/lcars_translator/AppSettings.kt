@@ -70,6 +70,11 @@ class AppSettings(context: Context) {
     var speechOnlineRecognition: Boolean
         get() = prefs.getBoolean("speech_online_recognition", true)
         set(v) { prefs.edit().putBoolean("speech_online_recognition", v).apply() }
+
+    /** Whether the user has purchased the Pro Supporter tip (no features gated). */
+    var isSupporter: Boolean
+        get() = prefs.getBoolean("is_supporter", false)
+        set(v) { prefs.edit().putBoolean("is_supporter", v).apply() }
 }
 
 

@@ -259,6 +259,38 @@
                 android:gravity="end" android:text="1500ms" />
         </LinearLayout>
 
+        <!-- ── SECTION: DEVELOPER SUPPORT ──────────── -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/lcars_yellow" android:layout_marginTop="8dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/support_section" android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/lcars_tan" android:textSize="11sp"
+            android:letterSpacing="0.15" android:textAllCaps="true"
+            android:paddingStart="16dp" android:paddingTop="10dp" android:paddingBottom="6dp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/support_description"
+            android:fontFamily="monospace" android:textColor="@color/lcars_gray"
+            android:textSize="10sp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingBottom="8dp" />
+
+        <Button android:id="@+id/btnSupportDeveloper"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="@string/support_btn_buy"
+            android:fontFamily="sans-serif-condensed" android:textSize="14sp"
+            android:textStyle="bold" android:letterSpacing="0.1"
+            android:textColor="@color/lcars_black"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/lcars_yellow"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" />
+
+        <TextView android:id="@+id/tvSupportStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed" android:textColor="@color/lcars_yellow"
+            android:textSize="12sp" android:gravity="center"
+            android:paddingTop="6dp" android:paddingBottom="4dp"
+            android:visibility="gone" />
+
         <!-- ── ENGAGE ───────────────────────────────────── -->
         <View android:layout_width="match_parent" android:layout_height="1dp"
             android:background="@color/lcars_orange" android:layout_marginTop="20dp" />

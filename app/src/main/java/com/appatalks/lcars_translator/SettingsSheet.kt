@@ -17,6 +17,8 @@ class SettingsSheet : BottomSheetDialogFragment() {
     companion object {
         /** Key used for FragmentResultListener to know settings were applied. */
         const val RESULT_KEY = "settings_applied"
+        /** Key used for FragmentResultListener to trigger a support purchase. */
+        const val RESULT_KEY_SUPPORT = "support_purchase_requested"
 
         fun newInstance(): SettingsSheet = SettingsSheet()
     }
@@ -61,6 +63,7 @@ class SettingsSheet : BottomSheetDialogFragment() {
         setupRecognitionQualityToggle(view)
         setupRecognitionModelToggle(view)
         setupSilenceTimeoutSeekBar(view)
+        setupSupportButton(view)
         setupEngageButton(view)
     }
 
@@ -186,6 +189,26 @@ class SettingsSheet : BottomSheetDialogFragment() {
             silenceTimeoutMs = 500 + p * 100
             tvValue.text     = "${silenceTimeoutMs}ms"
         })
+    }
+
+    // ── Developer Support ───────────────────────────────────────────────
+
+    private fun setupSupportButton(view: View) {
+        val btnSupport   = view.findViewById<Button>(R.id.btnSupportDeveloper)
+        val tvStatus     = view.findViewById<TextView>(R.id.tvSupportStatus)
+
+        if (settings.isSupporter) {
+            btnSupport.text = getString(R.string.support_btn_thanks)
+            btnSupport.backgroundTintList = csl(0xFF33FF33.toInt())
+            btnSupport.isEnabled = false
+            tvStatus.text = getString(R.string.support_thank_you)
+            tvStatus.visibility = View.VISIBLE
+        } else {
+            btnSupport.setOnClickListener {
+                parentFragmentManager.setFragmentResult(RESULT_KEY_SUPPORT, bundleOf())
+                dismiss()
+            }
+        }
     }
 
     // ── Engage ────────────────────────────────────────────────────────────

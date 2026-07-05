@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var translationManager: TranslationManager
     private lateinit var ttsManager: TtsManager
     private lateinit var appSettings: AppSettings
+    private lateinit var billingManager: BillingManager
 
     // ── State ─────────────────────────────────────────────────────────────
     /** "My language" — the user's own language. */
@@ -94,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         ttsManager.release()
         translationManager.release()
         btManager.release()
+        billingManager.release()
     }
 
     // ── Initialisation ────────────────────────────────────────────────────
@@ -120,6 +122,8 @@ class MainActivity : AppCompatActivity() {
         speechManager = SpeechInputManager(this)
         translationManager = TranslationManager()
         ttsManager = TtsManager(this)
+        billingManager = BillingManager(this, appSettings)
+        billingManager.startConnection()
         applyCurrentSettings()
     }
 
@@ -424,6 +428,9 @@ class MainActivity : AppCompatActivity() {
             appSettings = AppSettings(this)
             applyCurrentSettings()
             setStatus("Settings applied")
+        }
+        supportFragmentManager.setFragmentResultListener(SettingsSheet.RESULT_KEY_SUPPORT, this) { _, _ ->
+            billingManager.launchSupportPurchase()
         }
         SettingsSheet.newInstance().show(supportFragmentManager, "settings")
     }

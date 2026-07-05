@@ -35,6 +35,13 @@
     <string name="btn_bt_label">BT</string>
     <string name="btn_bt_active">BT ✓</string>
     <string name="stardate_format">SD %d</string>
+
+    <!-- Billing / Supporter -->
+    <string name="support_section">DEVELOPER SUPPORT</string>
+    <string name="support_description">This app is free with no ads. If it helps you on your travels, consider a small tip to support continued development.</string>
+    <string name="support_btn_buy">SUPPORT DEVELOPER</string>
+    <string name="support_btn_thanks">✦ PRO SUPPORTER ✦</string>
+    <string name="support_thank_you">Thank you for your support, ensign!</string>
 </resources>
 
 
