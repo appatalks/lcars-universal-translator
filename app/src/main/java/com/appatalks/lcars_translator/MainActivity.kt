@@ -2,7 +2,6 @@ package com.appatalks.lcars_translator
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -231,14 +230,6 @@ class MainActivity : AppCompatActivity() {
         // Stop any in-flight TTS
         ttsManager.stop()
 
-        // Start foreground service
-        val serviceIntent = Intent(this, TranslatorForegroundService::class.java)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(serviceIntent)
-        } else {
-            startService(serviceIntent)
-        }
-
         // Start speech recognition (loops so long speech isn't clipped)
         speechManager.startListening(recognizeLang)
 
@@ -295,7 +286,6 @@ class MainActivity : AppCompatActivity() {
         if (text.isBlank()) {
             setStatus(getString(R.string.status_no_speech))
             setListenDot(0xFF888888.toInt())
-            stopService(Intent(this, TranslatorForegroundService::class.java))
             return
         }
 
@@ -341,8 +331,6 @@ class MainActivity : AppCompatActivity() {
                 setStatus(getString(R.string.status_idle))
                 setListenDot(0xFF888888.toInt())
             }
-
-            stopService(Intent(this@MainActivity, TranslatorForegroundService::class.java))
         }
     }
 
