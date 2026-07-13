@@ -16,7 +16,7 @@ class BillingManager(
 
     companion object {
         private const val TAG = "BillingManager"
-        const val PRODUCT_ID = "pro_supporter"
+        const val PRODUCT_ID = "lcars_ut_pro_supporter"
     }
 
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
